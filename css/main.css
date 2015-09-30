@@ -53,9 +53,27 @@
 	text-decoration: underline !important;
 }
 
+.behance {
+	width: 97%;
+	height: 100px;
+	display: block;
+	background-color: #4b8eff;
+	margin: 110px auto 0 auto;
+	background-image: url(../i/behance.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+.behance:hover {
+	opacity: 0.8;
+}
+
 .portfolio {
-	padding-top: 80px;
+	margin-top: 30px;
 	overflow: hidden;
+	border-top: 1px solid #e9e9e9;
 }
 
 .item  {
