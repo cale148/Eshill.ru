@@ -3,10 +3,17 @@ My styles
 -------------------------------- */
 .w-title {
   background-color: #ffffff; }
+  .w-title img {
+    vertical-align: bottom; }
 
 .w-padding {
   padding: 30px;
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #ccc;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
 
 .large-header {
   position: absolute;
@@ -23,7 +30,7 @@ My styles
   color: #fff;
   left: 50%;
   margin-left: -300px;
-  bottom: 10%;
+  bottom: 5%;
   font-size: 24px; }
   .w-contacts .w-phone,
   .w-contacts .w-mail {
@@ -35,11 +42,18 @@ My styles
   .w-contacts .w-phone {
     background-image: url(../img/ico_phone.svg);
     float: left; }
+    .w-contacts .w-phone a {
+      color: #fff; }
   .w-contacts .w-mail {
     background-image: url(../img/ico_mail.svg);
     float: right; }
     .w-contacts .w-mail a {
       color: #fff; }
+
+.t-description {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 30px; }
 
 .t-contacts {
   display: none; }

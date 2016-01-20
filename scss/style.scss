@@ -12,11 +12,20 @@ My styles
 
 .w-title {
 	background-color: $color-4;
+
+	img {
+		vertical-align: bottom;
+	}
 }
 
 .w-padding {
 	padding: 30px;
 	border-bottom: 1px solid #ccc;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 .large-header {
@@ -35,7 +44,7 @@ My styles
 	color: #fff;
 	left: 50%;
 	margin-left: -300px;
-	bottom: 10%;
+	bottom: 5%;
 	font-size: 24px;
 
 	.w-phone,
@@ -50,6 +59,10 @@ My styles
 	.w-phone {
 		background-image: url(../img/ico_phone.svg);
 		float: left;
+
+		a {
+			color: #fff;
+		}
 	}
 
 	.w-mail {
@@ -60,6 +73,12 @@ My styles
 			color: #fff;
 		}
 	}
+}
+
+.t-description {
+	color: #fff;
+	font-size: 18px;
+	margin-bottom: 30px;
 }
 
 .t-contacts {display: none;}

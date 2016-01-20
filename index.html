@@ -31,38 +31,39 @@ pageTracker._trackPageview();
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter28311441 = new Ya.Metrika({
-                    id:28311441
-                });
-            } catch(e) { }
-        });
+		(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+						try {
+								w.yaCounter28311441 = new Ya.Metrika({
+										id:28311441
+								});
+						} catch(e) { }
+				});
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+				var n = d.getElementsByTagName("script")[0],
+						s = d.createElement("script"),
+						f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
 
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
+				if (w.opera == "[object Opera]") {
+						d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/28311441" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
 	<div class="w-contacts">
-		<div class="w-phone">+7 920 301-07-57</div>
+		<div class="w-phone"><a href="tel://+79203010757">+7 920 301-07-57</a></div>
 		<div class="w-mail"><a href="mailto:mail@eshill.ru">mail@eshill.ru</a></div>
 	</div>
 
 	<div class="cd-intro-block">
 		<div class="content-wrapper">
 			<h1>Дизайнер Сергей Хильков</h1>
+			<div class="t-description">Разрабатываю веб-интерфейсы с 2001 года.</div>
 			<div class="t-contacts">
 				Телефон: +7 920 301-07-57<br>
 				E-mail: <a href="mailto:mail@eshill.ru">mail@eshill.ru</a>
@@ -73,11 +74,32 @@ pageTracker._trackPageview();
 
 	<div class="cd-projects-wrapper">
 	<div id="large-header" class="large-header">
-	    <canvas id="demo-canvas"></canvas>
+			<canvas id="demo-canvas"></canvas>
 	</div>
 		<ul class="cd-slider">
+
 			<li class="current">
-				<a href="#0" id="page07">
+				<a href="#dirox" id="page09">
+					<img src="works/09s.png" alt="project image">
+					<div class="project-info">
+						<h2>Dirox</h2>
+						<p>Дизайн и верстка сайта</p>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#buyky" id="page08">
+					<img src="works/08s.png" alt="project image">
+					<div class="project-info">
+						<h2>Buyky</h2>
+						<p>Дизайн сайта и мобильного приложения</p>
+					</div>
+				</a>
+			</li>
+
+			<li>
+				<a href="#yii_framework.ru" id="page07">
 					<img src="works/07s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Yii framework</h2>
@@ -87,7 +109,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#0" id="page06">
+				<a href="#mlingos" id="page06">
 					<img src="works/06s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>mLingos</h2>
@@ -97,7 +119,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#0" id="page05">
+				<a href="#raspishi" id="page05">
 					<img src="works/05s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Распиши.рф</h2>
@@ -107,7 +129,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#0" id="page04">
+				<a href="#inkdcape" id="page04">
 					<img src="works/04s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Inkscape</h2>
@@ -117,7 +139,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#0" id="page03">
+				<a href="#directorfest" id="page03">
 					<img src="works/03s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>«Золотой Феникс»</h2>
@@ -127,7 +149,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#0" id="page02">
+				<a href="#magkvartir" id="page02">
 					<img src="works/02s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Магазин квартир</h2>
@@ -137,7 +159,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#0" id="page01">
+				<a href="#ingress" id="page01">
 					<img src="works/01s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Ingress Game</h2>
@@ -167,36 +189,34 @@ pageTracker._trackPageview();
 <script>
 	$.ajaxSetup({cache:false});
 	$(document).ready(function () {
-	       // load index page when the page loads
-	       $("#page07").click(function () {
-	           // load home page on click
-	           $("#response").hide().load("07.html").fadeIn('slow');
-	       });
-	       $("#page06").click(function () {
-	           // load home page on click
-	           $("#response").hide().load("06.html").fadeIn('slow');
-	       });
-	       $("#page05").click(function () {
-	           // load home page on click
-	           $("#response").hide().load("05.html").fadeIn('slow');
-	       });
-	       $("#page04").click(function () {
-	           // load home page on click
-	           $("#response").hide().load("04.html").fadeIn('slow');
-	       });
-	       $("#page03").click(function () {
-	           // load home page on click
-	           $("#response").hide().load("03.html").fadeIn('slow');
-	       });
-	       $("#page02").click(function () {
-	           // load home page on click
-	           $("#response").hide().load("02.html").fadeIn('slow');
-	       });
-	       $("#page01").click(function () {
-	           // load home page on click
-	           $("#response").hide().load("01.html").fadeIn('slow');
-	       });
-	   });
+			$("#page09").click(function () {
+					 $("#response").hide().load("09.html").fadeIn('slow');
+			 });
+			 $("#page08").click(function () {
+					 $("#response").hide().load("08.html").fadeIn('slow');
+			 });
+			 $("#page07").click(function () {
+					 $("#response").hide().load("07.html").fadeIn('slow');
+			 });
+			 $("#page06").click(function () {
+					 $("#response").hide().load("06.html").fadeIn('slow');
+			 });
+			 $("#page05").click(function () {
+					 $("#response").hide().load("05.html").fadeIn('slow');
+			 });
+			 $("#page04").click(function () {
+					 $("#response").hide().load("04.html").fadeIn('slow');
+			 });
+			 $("#page03").click(function () {
+					 $("#response").hide().load("03.html").fadeIn('slow');
+			 });
+			 $("#page02").click(function () {
+					 $("#response").hide().load("02.html").fadeIn('slow');
+			 });
+			 $("#page01").click(function () {
+					 $("#response").hide().load("01.html").fadeIn('slow');
+			 });
+	 });
 </script>
 
 <script src="js/demo-2.js"></script>
