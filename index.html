@@ -180,7 +180,7 @@ pageTracker._trackPageview();
 		<div>
 			<div class="contentarea" id="response"></div>
 		</div>
-		<a href="#0" class="close cd-img-replace">Close</a>
+		<a href="#0" id="close-brief" class="close cd-img-replace">Close</a>
 	</div>
 <script src="js/jquery-2.1.4.js"></script>
 <script src="js/jquery.mobile.custom.min.js"></script>
@@ -188,25 +188,32 @@ pageTracker._trackPageview();
 
 <script>
 	var currentLoad = null;
-	var load = function (id) {
-		var $responce = $("#response")
-		if (currentLoad) {
-			currentLoad.abort()
-		}
-		$responce.hide()
-		currentLoad = $.ajax({
-			method: 'GET',
-			url: id + '.html',
-			cache: false,
-			success: function(data) {
-				$responce.html(data);
-				$responce.fadeIn('slow');
-			}
-		})
-	}
 	$(document).ready(function () {
+		var cancelLoad = function() {
+			if (currentLoad) {
+				currentLoad.abort()
+				currentLoad = null
+			}
+		}
+		var load = function (id) {
+			var $responce = $("#response")
+			cancelLoad()
+			$responce.hide()
+			currentLoad = $.ajax({
+				method: 'GET',
+				url: id + '.html',
+				cache: false,
+				success: function(data) {
+					$responce.html(data);
+					$responce.fadeIn('slow');
+				}
+			})
+		}
 		$(".js-show-item").click(function () {
 			load($(this).data('id'))
+		});
+		$("#close-brief").click(function () {
+			cancelLoad()
 		});
   });
 </script>
