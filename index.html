@@ -79,7 +79,7 @@ pageTracker._trackPageview();
 		<ul class="cd-slider">
 
 			<li class="current">
-				<a href="#dirox" id="page09">
+				<a href="#dirox" class="js-show-item" data-id="09">
 					<img src="works/09s.png" alt="project image">
 					<div class="project-info">
 						<h2>Dirox</h2>
@@ -89,7 +89,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#buyky" id="page08">
+				<a href="#buyky" class="js-show-item" data-id="08">
 					<img src="works/08s.png" alt="project image">
 					<div class="project-info">
 						<h2>Buyky</h2>
@@ -99,7 +99,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#yii_framework.ru" id="page07">
+				<a href="#yii_framework.ru" class="js-show-item" data-id="07">
 					<img src="works/07s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Yii framework</h2>
@@ -109,7 +109,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#mlingos" id="page06">
+				<a href="#mlingos" class="js-show-item" data-id="06">
 					<img src="works/06s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>mLingos</h2>
@@ -119,7 +119,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#raspishi" id="page05">
+				<a href="#raspishi" class="js-show-item" data-id="05">
 					<img src="works/05s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Распиши.рф</h2>
@@ -129,7 +129,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#inkdcape" id="page04">
+				<a href="#inkdcape" class="js-show-item" data-id="04">
 					<img src="works/04s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Inkscape</h2>
@@ -139,7 +139,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#directorfest" id="page03">
+				<a href="#directorfest" class="js-show-item" data-id="03">
 					<img src="works/03s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>«Золотой Феникс»</h2>
@@ -149,7 +149,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#magkvartir" id="page02">
+				<a href="#magkvartir" class="js-show-item" data-id="02">
 					<img src="works/02s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Магазин квартир</h2>
@@ -159,7 +159,7 @@ pageTracker._trackPageview();
 			</li>
 
 			<li>
-				<a href="#ingress" id="page01">
+				<a href="#ingress" class="js-show-item" data-id="01">
 					<img src="works/01s.jpg" alt="project image">
 					<div class="project-info">
 						<h2>Ingress Game</h2>
@@ -187,36 +187,28 @@ pageTracker._trackPageview();
 <script src="js/main.js"></script>
 
 <script>
-	$.ajaxSetup({cache:false});
+	var currentLoad = null;
+	var load = function (id) {
+		var $responce = $("#response")
+		if (currentLoad) {
+			currentLoad.abort()
+		}
+		$responce.hide()
+		currentLoad = $.ajax({
+			method: 'GET',
+			url: id + '.html',
+			cache: false,
+			success: function(data) {
+				$responce.html(data);
+				$responce.fadeIn('slow');
+			}
+		})
+	}
 	$(document).ready(function () {
-			$("#page09").click(function () {
-					 $("#response").hide().load("09.html").fadeIn('slow');
-			 });
-			 $("#page08").click(function () {
-					 $("#response").hide().load("08.html").fadeIn('slow');
-			 });
-			 $("#page07").click(function () {
-					 $("#response").hide().load("07.html").fadeIn('slow');
-			 });
-			 $("#page06").click(function () {
-					 $("#response").hide().load("06.html").fadeIn('slow');
-			 });
-			 $("#page05").click(function () {
-					 $("#response").hide().load("05.html").fadeIn('slow');
-			 });
-			 $("#page04").click(function () {
-					 $("#response").hide().load("04.html").fadeIn('slow');
-			 });
-			 $("#page03").click(function () {
-					 $("#response").hide().load("03.html").fadeIn('slow');
-			 });
-			 $("#page02").click(function () {
-					 $("#response").hide().load("02.html").fadeIn('slow');
-			 });
-			 $("#page01").click(function () {
-					 $("#response").hide().load("01.html").fadeIn('slow');
-			 });
-	 });
+		$(".js-show-item").click(function () {
+			load($(this).data('id'))
+		});
+  });
 </script>
 
 <script src="js/demo-2.js"></script>
